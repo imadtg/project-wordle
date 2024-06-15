@@ -10,7 +10,7 @@ function Cell({ letter, status }) {
 function Guess({ value, answer }) {
   let feedback = checkGuess(value, answer);
   return (
-    <p class="guess">
+    <p className="guess">
       {range(5).map((num) => (
         <Cell
           key={num}
