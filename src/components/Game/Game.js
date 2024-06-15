@@ -13,7 +13,7 @@ console.info({ answer });
 function Game() {
   const [guesses, setGuesses] = React.useState([]);
   function handleSubmitGuess(guess) {
-    setGuesses([...guesses, { guess, id: crypto.randomUUID() }]);
+    setGuesses([...guesses, guess]);
   }
   return (
     <>
