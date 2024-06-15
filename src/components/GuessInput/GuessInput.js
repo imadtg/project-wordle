@@ -14,6 +14,8 @@ function GuessInput({ handleSubmitGuess, disabled}) {
       <input
         id="guess-input"
         type="text"
+        maxLength={5}
+        minLength={5}
         pattern="[a-zA-Z]{5}"
         title="5 letter word"
         value={tentativeGuess}
