@@ -8,9 +8,10 @@ import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 import WonBanner from "../WonBanner";
 import LostBanner from "../LostBanner";
 import Button from "../Button";
+import FeedbackKeyboard from "../FeedbackKeyboard";
 
 function Game() {
-  const [answer, setAnswer] = React.useState(() => sample(WORDS));
+  const [answer, setAnswer] = React.useState(sample(WORDS));
   const [guesses, setGuesses] = React.useState([]);
   const [gameState, setGameState] = React.useState("playing");
   React.useEffect(() => console.info({ answer }), [answer]);
@@ -42,6 +43,7 @@ function Game() {
         disabled={gameState !== "playing"}
         handleSubmitGuess={handleSubmitGuess}
       />
+      <FeedbackKeyboard answer={answer} guesses={guesses}/>
     </>
   );
 }
